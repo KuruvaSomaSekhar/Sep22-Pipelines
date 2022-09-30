@@ -17,5 +17,10 @@ pipeline {
                 echo "Upload artifacts to s3"
             }
         }
+        stage("Check artifact"){
+            steps{
+                echo "Check artifacts"
+            }
+        }
     }
 }
