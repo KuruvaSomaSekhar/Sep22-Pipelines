@@ -20,11 +20,15 @@ pipeline {
         stage("Upload artifacts"){
             steps{
                 echo "Upload artifacts to s3"
+                sh '''
+                   aws s3 cp target/hello-*.war s3://sep2222/$JOB_NAME/master/$BUILD_NUMBER/
+                   '''
             }
         }
         stage("Check artifact"){
             steps{
                 echo "Check artifacts"
+                sh "aws s3 ls s3://sep2222/$JOB_NAME/master/$BUILD_NUMBER/ "
             }
         }
     }
