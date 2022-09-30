@@ -5,7 +5,7 @@ pipeline {
         stage("Checkout"){
             steps {
                 echo "Clone the the source code"
-                checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/KuruvaSomaSekhar/Sep22-code.git']])
+                checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/KuruvaSomaSekhar/Sep22-code.git']]])
                 sh "ls -la"
             }
         }
