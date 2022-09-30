@@ -3,6 +3,7 @@ pipeline {
     agent any
     parameters {
     string(name: 'SOURCE_BRANCH', defaultValue: 'master', description: 'Provide source cod branch')
+    choice(name: 'CHOICES', choices: ['one', 'two', 'three'], description: '')
   }
     stages {
         stage("Checkout"){
